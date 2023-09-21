@@ -1,9 +1,9 @@
 package main.model;
 
 
+import java.util.ArrayList;
+
 public class ChessBoard {
-    private Integer rows;
-    private Integer columns;
-    private PieceType pieces;
+    private ArrayList square;
 
 }
