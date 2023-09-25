@@ -10,7 +10,7 @@ public class ChessPiece {
         this.board = board;
         this.color = color;
     }
-    public boolean isValideMove(){
+     public boolean isValideMove(){
         return true;
     }
     public boolean isBeCaptured(){

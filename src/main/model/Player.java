@@ -11,6 +11,10 @@ public class Player {
         this.pieceColor = pieceColor;
     }
 
+    public boolean isWhitePlayer(){
+        return pieceColor.equals(Color.Colors.White);
+    }
+
     public void makeMove(){
 
     }

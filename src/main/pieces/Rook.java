@@ -10,3 +10,4 @@ public class Rook extends ChessPiece {
         super(position, board, color);
     }
 }
+    
