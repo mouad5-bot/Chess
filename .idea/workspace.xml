@@ -49,11 +49,11 @@
 }</component>
   <component name="RunManager" selected="Application.ChessBoard">
     <configuration name="ChessBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.model.ChessBoard" />
+      <option name="MAIN_CLASS_NAME" value="main.classes.ChessBoard" />
       <module name="Chess" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="main.model.*" />
+          <option name="PATTERN" value="main.classes.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>

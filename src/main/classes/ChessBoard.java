@@ -1,4 +1,4 @@
-package main.model;
+package main.classes;
 
 import java.util.Scanner;
 

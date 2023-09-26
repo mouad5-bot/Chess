@@ -1,6 +1,4 @@
-package main.model;
-
-import java.nio.channels.Pipe;
+package main.classes;
 
 public class Move {
     private Square startSquare;
