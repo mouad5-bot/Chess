@@ -15,7 +15,7 @@ public class Pawn extends ChessPiece {
 
     private static final int BOARD_SIZE = 8;
 
-    private static boolean isValidMove(int currentRow, int currentCol, int newRow, int newCol, boolean isWhitePlayer) {
+    private static boolean isValidMove(int row, int column, int newRow, int newCol, boolean isWhitePlayer) {
 
         if (newRow < 0 || newRow >= BOARD_SIZE || newCol < 0 || newCol >= BOARD_SIZE) {
             return false;
@@ -25,17 +25,17 @@ public class Pawn extends ChessPiece {
         int rowDirection = isWhitePlayer ? -1 : 1;
 
         // Check if the pawn is moving forward by one row
-        if (newRow == currentRow + rowDirection && newCol == currentCol) {
+        if (newRow == row + rowDirection && newCol == column) {
             return true;
         }
 
         // Check if the pawn is making its initial two-square move
-        if (newRow == currentRow + (2 * rowDirection) && newCol == currentCol && currentRow == (isWhitePlayer ? 6 : 1)) {
+        if (newRow == row + (2 * rowDirection) && newCol == column && row == (isWhitePlayer ? 6 : 1)) {
             return true;
         }
 
         // Check if the pawn is capturing a piece diagonally
-        if (newRow == currentRow + rowDirection && Math.abs(newCol - currentCol) == 1) {
+        if (newRow == row + rowDirection && Math.abs(newCol - column) == 1) {
             return true;
         }
 
