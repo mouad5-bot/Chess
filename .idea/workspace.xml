@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7732854f-8bd1-4f86-9d8b-b5f6552ed1fa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/ChessPiece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/model/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/Square.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/model/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/model/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Rook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/view/ChessboardPrinter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/view/ChessboardPrinter.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +47,20 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.ChessBoard">
+    <configuration name="ChessBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.model.ChessBoard" />
+      <module name="Chess" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="Chess" />
@@ -81,6 +89,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ChessBoard" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Pawn" />
       </list>
@@ -99,6 +108,7 @@
       <workItem from="1695378744462" duration="1016000" />
       <workItem from="1695389754556" duration="6876000" />
       <workItem from="1695476434061" duration="9141000" />
+      <workItem from="1695714029041" duration="7932000" />
     </task>
     <servers />
   </component>
