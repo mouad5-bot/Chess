@@ -6,6 +6,22 @@ public class Square {
     private int newRow;
     private int newColumn;
 
+    public Square(){}
+    public Square(int row, int column){
+        this.row = row;
+        this.column = column;
+    }
+
+    @Override
+    public String toString() {
+        return "Square{" +
+                "row=" + row +
+                ", column=" + column +
+                ", newRow=" + newRow +
+                ", newColumn=" + newColumn +
+                '}';
+    }
+
     public int getRow() {
         return row;
     }

@@ -6,8 +6,8 @@ import main.classes.Color;
 import main.classes.Square;
 
 public class Rook extends ChessPiece {
-    public Rook(Square position, ChessBoard board, Color color) {
-        super(position, board, color);
+    public Rook(String symbol, Color color, Square position) {
+        super(symbol,color, position);
     }
 }
     

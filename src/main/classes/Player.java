@@ -12,7 +12,7 @@ public class Player {
     }
 
     public boolean isWhitePlayer(){
-        return pieceColor.equals(Color.Colors.White);
+        return pieceColor.equals(Color.White);
     }
 
     public void makeMove(){

@@ -1,60 +1,69 @@
 package main.classes;
 
+import main.pieces.*;
+
+import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ChessBoard {
     private static final int BOARD_SIZE = 8;
     private static final char EMPTY_SQUARE = '~';
-    private char[][] board;
+    private List<ChessPiece> listOfPieces;
 
     public ChessBoard() {
-        board = new char[BOARD_SIZE][BOARD_SIZE];
+        listOfPieces = new ArrayList<>();
         initializeBoard();
     }
 
     private void initializeBoard() {
         // White pieces
-        board[0][0] = 'r';
-        board[0][1] = 'n';
-        board[0][2] = 'b';
-        board[0][3] = 'q';
-        board[0][4] = 'k';
-        board[0][5] = 'b';
-        board[0][6] = 'n';
-        board[0][7] = 'r';
-        for (int i = 0; i < BOARD_SIZE; i++) {
-            board[1][i] = 'p';
-        }
+        listOfPieces.add(new Rook("r", Color.White, new Square(0,0)));
+        listOfPieces.add(new Knight("n", Color.White, new Square(0,1)));
+        listOfPieces.add(new Bishop("b", Color.White, new Square(0,2)));
+        listOfPieces.add(new Queen("q", Color.White, new Square(0,3)));
+        listOfPieces.add(new King("k", Color.White, new Square(0,4)));
+        listOfPieces.add(new Bishop("b", Color.White, new Square(0,5)));
+        listOfPieces.add(new Knight("n", Color.White, new Square(0,6)));
+        listOfPieces.add(new Rook("r", Color.White, new Square(0,7)));
 
-        // Balck pieces
-        board[7][0] = 'R';
-        board[7][1] = 'N';
-        board[7][2] = 'B';
-        board[7][3] = 'Q';
-        board[7][4] = 'K';
-        board[7][5] = 'B';
-        board[7][6] = 'N';
-        board[7][7] = 'R';
         for (int i = 0; i < BOARD_SIZE; i++) {
-            board[6][i] = 'P';
+            listOfPieces.add(new Pawn("p", Color.White, new Square(1, i)));
         }
 
         // Empty squares
         for (int row = 2; row < 6; row++) {
             for (int col = 0; col < BOARD_SIZE; col++) {
-
-                board[row][col] = EMPTY_SQUARE;
+                listOfPieces.add(new EmptySquare("~", Color.non, new Square(row, col)));
             }
         }
+
+        // Balck pieces
+        for (int i = 0; i < BOARD_SIZE; i++) {
+            listOfPieces.add(new Pawn("P", Color.Black, new Square(6, i)));
+        }
+        listOfPieces.add(new Rook("R", Color.Black, new Square(7, 0)));
+        listOfPieces.add(new Rook("N", Color.Black, new Square(7, 1)));
+        listOfPieces.add(new Rook("B", Color.Black, new Square(7, 2)));
+        listOfPieces.add(new Rook("Q", Color.Black, new Square(7, 3)));
+        listOfPieces.add(new Rook("K", Color.Black, new Square(7, 4)));
+        listOfPieces.add(new Rook("B", Color.Black, new Square(7, 5)));
+        listOfPieces.add(new Rook("N", Color.Black, new Square(7, 6)));
+        listOfPieces.add(new Rook("R", Color.Black, new Square(7, 7)));
+
     }
 
     public void displayBoard() {
-        for (int row = 0; row < BOARD_SIZE; row++) {
-            System.out.print((row + 1) + "  ");
-            for (int col = 0; col < BOARD_SIZE; col++) {
-                System.out.print(board[row][col] + " ");
-            }
-            System.out.println();
+        int rowPieceIndex = 8;
+        for (int row = 0; row < 64; row++) {
+            if (row % 8 == 0)
+                System.out.print(rowPieceIndex-- + "  ");
+
+            System.out.print(listOfPieces.get(row).symbol + " ");
+
+            if ((row+1) % 8 == 0)
+                System.out.println();
         }
         System.out.println("   a b c d e f g h");
     }

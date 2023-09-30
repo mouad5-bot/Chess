@@ -6,8 +6,8 @@ import main.classes.Color;
 import main.classes.Square;
 
 public class Knight extends ChessPiece {
-        public Knight(Square position, ChessBoard board, Color color) {
-            super(position, board, color);
+        public Knight(String symbol, Color color, Square position) {
+            super(symbol,color, position);
         }
 
         public boolean isValideMove(int currentRow, int currentCol, int newRow, int newCol) {

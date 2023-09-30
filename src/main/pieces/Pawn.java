@@ -7,8 +7,8 @@ import main.classes.Square;
 
 public class Pawn extends ChessPiece {
 
-    public Pawn(Square position, ChessBoard board, Color color) {
-        super(position, board, color);
+    public Pawn(String symbol, Color color, Square position) {
+        super(symbol,color, position);
     }
 
 

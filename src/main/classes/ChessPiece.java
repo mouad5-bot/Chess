@@ -1,16 +1,26 @@
 package main.classes;
 
 public class ChessPiece {
+    public String symbol;
     public Square position;
-    public ChessBoard board;
     public Color color;
 
-    public ChessPiece(Square position, ChessBoard board, Color color) {
-        this.position = position;
-        this.board = board;
+    public ChessPiece(String symbol, Color color, Square position) {
+        this.symbol = symbol;
         this.color = color;
+        this.position = position;
     }
-     public boolean isValideMove(){
+
+    @Override
+    public String toString() {
+        return "ChessPiece{" +
+                "symbol='" + symbol + '\'' +
+                ", position=" + position +
+                ", color=" + color +
+                '}';
+    }
+
+    public boolean isValideMove(){
         return true;
     }
     public boolean isBeCaptured(){

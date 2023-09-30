@@ -6,8 +6,8 @@ import main.classes.Color;
 import main.classes.Square;
 
 public class King extends ChessPiece {
-    public King(Square position, ChessBoard board, Color color) {
-        super(position, board, color);
+    public King(String symbol, Color color, Square position) {
+        super(symbol,color, position);
     }
 
     public boolean isCheck(){
