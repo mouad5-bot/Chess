@@ -1,7 +1,7 @@
 package main.classes;
 
 public enum Color {
-    Black,
-    White,
-    non
+    BLACK,
+    WHITE,
+    NON
 }

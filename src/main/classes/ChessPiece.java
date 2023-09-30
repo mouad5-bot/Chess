@@ -1,5 +1,7 @@
 package main.classes;
 
+import java.util.Map;
+
 public class ChessPiece {
     public String symbol;
     public Square position;
@@ -20,7 +22,7 @@ public class ChessPiece {
                 '}';
     }
 
-    public boolean isValideMove(){
+    public boolean isValideMove(String position, String newPosition, Map<String, ChessPiece> boardPieces){
         return true;
     }
     public boolean isBeCaptured(){
