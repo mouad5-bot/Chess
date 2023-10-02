@@ -6,9 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="7732854f-8bd1-4f86-9d8b-b5f6552ed1fa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/classes/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/ChessBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/classes/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/ChessPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/classes/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/Move.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/classes/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/Result.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/classes/Square.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/Square.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Rook.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +119,8 @@
       <workItem from="1695714029041" duration="13427000" />
       <workItem from="1695800944228" duration="3468000" />
       <workItem from="1696001835017" duration="21767000" />
-      <workItem from="1696181684660" duration="1613000" />
+      <workItem from="1696181684660" duration="8462000" />
+      <workItem from="1696235000143" duration="15671000" />
     </task>
     <servers />
   </component>

@@ -1,22 +1,24 @@
 package main.classes;
 
 public class Square {
-    private int row;
+    private char row;
     private char column;
-    private int newRow;
+    private char newRow;
     private char newColumn;
 
-    public Square(){}
-    public Square(int row, char column){
+    public Square() {}
+    public Square(char row, char column, char newRow, char newColumn) {
         this.row = row;
         this.column = column;
+        this.newRow = newRow;
+        this.newColumn = newColumn;
     }
 
-    public int getRow() {
+    public char getRow() {
         return row;
     }
 
-    public void setRow(int row) {
+    public void setRow(char row) {
         this.row = row;
     }
 
@@ -28,11 +30,11 @@ public class Square {
         this.column = column;
     }
 
-    public int getNewRow() {
+    public char getNewRow() {
         return newRow;
     }
 
-    public void setNewRow(int newRow) {
+    public void setNewRow(char newRow) {
         this.newRow = newRow;
     }
 
@@ -54,10 +56,10 @@ public class Square {
                 '}';
     }
 
-    public String newPosition(int newRow, char newColumn){
+    public String newPosition(char newRow, char newColumn){
         return newColumn + "" + newRow;
     }
-    public String Position(int row, char column){
+    public String Position(char row, char column){
         return row + "" + column;
     }
 

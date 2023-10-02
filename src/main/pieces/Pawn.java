@@ -5,56 +5,45 @@ import main.classes.ChessPiece;
 import main.classes.Color;
 import main.classes.Square;
 
+import java.util.Map;
+
 public class Pawn extends ChessPiece {
 
     public Pawn(String symbol, Color color, Square position) {
         super(symbol,color, position);
     }
 
-
-
-    private static final int BOARD_SIZE = 8;
-
-    private static boolean isValidMove(int row, int column, int newRow, int newCol, boolean isWhitePlayer) {
-
-        if (newRow < 0 || newRow >= BOARD_SIZE || newCol < 0 || newCol >= BOARD_SIZE) {
-            return false;
-        }
+    public boolean moveValidation(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer) {
 
         // Calculate the row movement direction based on the player's color
-        int rowDirection = isWhitePlayer ? -1 : 1;
+        char row = position.getRow();
+        char col = position.getColumn();
+        char newRow = position.getNewRow();
+        char newCol = position.getNewColumn();
+
+        int rowDirection = isWhitePlayer ? 1 : -1 ;
 
         // Check if the pawn is moving forward by one row
-        if (newRow == row + rowDirection && newCol == column) {
+        if (newRow == row + rowDirection && (newCol == ++col || newCol == --col)) {
             return true;
         }
 
         // Check if the pawn is making its initial two-square move
-        if (newRow == row + (2 * rowDirection) && newCol == column && row == (isWhitePlayer ? 6 : 1)) {
+        if (newRow == row + (2 * rowDirection) && newCol == col && row == (isWhitePlayer ? 2 : 7)) {
             return true;
         }
 
         // Check if the pawn is capturing a piece diagonally
-        if (newRow == row + rowDirection && Math.abs(newCol - column) == 1) {
+        if (newRow == row + rowDirection && Math.abs(newCol - col) == 1) {
             return true;
         }
 
         return false;
     }
 
-//    public static void main(String[] args) {
-//        // Example usage
-//        int currentRow = 1;
-//        int currentCol = 3;
-//        int newRow = 2;
-//        int newCol = 3;
-//        boolean isWhitePlayer = true;
-//
-//        if (isValidMove(currentRow, currentCol, newRow, newCol, isWhitePlayer)) {
-//            // Perform the move
-//            System.out.println("Valid move!");
-//        } else {
-//            System.out.println("Invalid move!");
-//        }
-//    }
+    @Override
+    public boolean isBeCaptured() {
+        return super.isBeCaptured();
+    }
+
 }

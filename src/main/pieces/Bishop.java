@@ -12,12 +12,17 @@ public class Bishop extends ChessPiece {
         super(symbol , color, position);
     }
 
-    @Override
-    public boolean isValideMove(String position, String newPosition, Map<String, ChessPiece> boardPieces) {
-//        ChessPiece newPositionPiece = boardPieces.get(newPosition);
-//        if(newPositionPiece instanceof EmptySquare) {
-//
-//        }
-        return true;
-    }
+
+        public boolean moveValidation(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer) {
+            ChessPiece newPositionPiece = boardPieces.get(position.getColumn()+""+position.getRow());
+            if(newPositionPiece instanceof EmptySquare) ;
+
+            return true;
+        }
+
+        @Override
+        public boolean isBeCaptured() {
+            return super.isBeCaptured();
+        }
+
 }

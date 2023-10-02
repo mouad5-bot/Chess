@@ -10,8 +10,6 @@ public class ChessBoard {
 
 
     public ChessBoard() {
-       // listOfPieces = new ArrayList<>();
-        //initializeBoard();
         boardPieces = new HashMap<>();
         initializeBoardUsingMap();
     }
@@ -24,7 +22,7 @@ public class ChessBoard {
 
         //boardPieces.get("a8").isValideMove("a8", "a3", boardPieces);
         // Black pieces
-        boardPieces.put("a8", (new Rook("r", Color.BLACK, new Square())));
+        boardPieces.put("a8",(new Rook("r", Color.BLACK, new Square())));
         boardPieces.put("b8",(new Knight("n", Color.BLACK, new Square())));
         boardPieces.put("c8",(new Bishop("b", Color.BLACK, new Square())));
         boardPieces.put("d8",(new Queen("q", Color.BLACK, new Square())));
@@ -53,12 +51,12 @@ public class ChessBoard {
             boardPieces.put(alpha++ + "2",(new Pawn("P", Color.WHITE, new Square())));
         }
         boardPieces.put("a1",(new Rook("R", Color.WHITE, new Square())));
-        boardPieces.put("b1",(new Rook("N", Color.WHITE, new Square())));
-        boardPieces.put("c1",(new Rook("B", Color.WHITE, new Square())));
-        boardPieces.put("d1",(new Rook("Q", Color.WHITE, new Square())));
-        boardPieces.put("e1",(new Rook("K", Color.WHITE, new Square())));
-        boardPieces.put("f1",(new Rook("B", Color.WHITE, new Square())));
-        boardPieces.put("g1",(new Rook("N", Color.WHITE, new Square())));
+        boardPieces.put("b1",(new Knight("N", Color.WHITE, new Square())));
+        boardPieces.put("c1",(new Bishop("B", Color.WHITE, new Square())));
+        boardPieces.put("d1",(new Queen("Q", Color.WHITE, new Square())));
+        boardPieces.put("e1",(new King("K", Color.WHITE, new Square())));
+        boardPieces.put("f1",(new Bishop("B", Color.WHITE, new Square())));
+        boardPieces.put("g1",(new Knight("N", Color.WHITE, new Square())));
         boardPieces.put("h1",(new Rook("R", Color.WHITE, new Square())));
 
     }
@@ -81,25 +79,39 @@ public class ChessBoard {
         Scanner scanner = new Scanner(System.in);
         while (true) {
             displayBoard();
-            System.out.print("Enter the position of the piece to move (e.g., A1): ");
+            System.out.print("Enter the position of the piece to move (e.g., a2): ");
             String input = scanner.nextLine().trim();
             if (input.equalsIgnoreCase("exit")) {
                 System.out.println("Exiting the game...");
                 break;
+
             }
             if (input.length() != 2) {
                 System.out.println("Invalid input! Please enter the position of the piece to move.");
                 continue;
             }
-            char column = Character.toUpperCase(input.charAt(0));
+
+            char column = Character.toLowerCase(input.charAt(0));
             char row = input.charAt(1);
+
             if (column < 'a' || column > 'h' || row < '1' || row > '8') {
                 System.out.println("Invalid position! Please enter a valid position on the chessboard.");
                 continue;
             }
-            int rowIndex = row - '1';
-            int colIndex = column - 'A';
-            System.out.println("Piece at position " + input + " moved.");
+
+            System.out.print("Enter the position of the square to move your piece (e.g., a4):");
+            String currentInput = scanner.nextLine().trim();
+
+            char newCol = Character.toLowerCase(currentInput.charAt(0));
+            char newRow = currentInput.charAt(1);
+
+            Square position = new Square(row, column, newRow, newCol);
+
+            System.out.println("this is old position : " + column + "" + row);
+            System.out.println("this is the current position : " + newCol + "" + newRow);
+            Move move = new Move();
+            move.move(position);
+
         }
         scanner.close();
     }

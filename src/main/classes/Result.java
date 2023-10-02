@@ -1,9 +1,7 @@
 package main.classes;
 
-public class Result {
-    public enum Results{
-        BlackIsTheWinner,
-        WhiteIsTheWinner,
-        Draw
-    }
+public enum Result{
+    BlackIsTheWinner,
+    WhiteIsTheWinner,
+    Draw
 }
