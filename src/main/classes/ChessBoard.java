@@ -110,7 +110,6 @@ public class ChessBoard {
             System.out.println("this is the current position : " + newCol + "" + newRow);
             Move move = new Move();
             move.move(position);
-
         }
         scanner.close();
     }

@@ -17,7 +17,6 @@ public class Queen extends ChessPiece {
 //        return true;
 //    }
 
-    @Override
     public boolean isValideMove(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer) {
         return super.isValideMove(position, boardPieces, isWhitePlayer);
     }

@@ -30,22 +30,25 @@ public class Move {
     }
 
 public void move(Square position) {
-    System.out.println("this is row and col : "+ position.getColumn() + "" + position.getRow());
+    char row = position.getRow();
+    char col = position.getColumn();
+    char newRow = position.getNewRow();
+    char newCol = position.getNewColumn();
 
     ChessBoard chessBoard = new ChessBoard();
     Player player;
-    ChessPiece chessPiece;
 
-    String symbol = chessBoard.getBoardPieces().get(position.getColumn() + "" + position.getRow()).symbol;
-    Color color = chessBoard.getBoardPieces().get(position.getColumn() + "" + position.getRow()).color;
+    ChessPiece chessPiece = chessBoard.getBoardPieces().get(col +""+ row);
+    ChessPiece newChessPiece = chessBoard.getBoardPieces().get(newCol +""+ newRow);
 
-    chessPiece = new ChessPiece(symbol, color, position);
+    Color color = chessBoard.getBoardPieces().get(col + "" + row).color;
     player = new Player(color);
 
-    if(chessPiece.isValideMove(position, chessBoard.getBoardPieces(), player.isWhitePlayer())){
+    if (chessPiece.isValideMove(position, chessBoard.getBoardPieces(), player.isWhitePlayer())) {
+        chessBoard.getBoardPieces(col +""+ row, chessPiece)
         System.out.println("valid move");
-    }else{
-        System.out.println("Opps invalid move !");
+    } else {
+        System.out.println("Ops invalid move !");
     }
 
 

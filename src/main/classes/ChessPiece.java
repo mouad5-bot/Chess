@@ -25,12 +25,6 @@ public class ChessPiece {
     }
 
     public boolean isValideMove(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer){
-        char newRow = position.getNewRow();
-        char newCol = position.getNewColumn();
-
-        if ( newRow <= 0 || newRow > BOARD_SIZE || newCol < 'a' || newCol > 'h') {
-            return false;
-        }
         return true;
     }
     public boolean isBeCaptured(){
