@@ -31,19 +31,23 @@ public class Move {
 
 public void move(Square position) {
     System.out.println("this is row and col : "+ position.getColumn() + "" + position.getRow());
-    // Assuming chessBoard is an already initialized ChessBoard instance
+
     ChessBoard chessBoard = new ChessBoard();
-    ChessPiece chessPiece = new ChessPiece();
+    Player player;
+    ChessPiece chessPiece;
 
     String symbol = chessBoard.getBoardPieces().get(position.getColumn() + "" + position.getRow()).symbol;
     Color color = chessBoard.getBoardPieces().get(position.getColumn() + "" + position.getRow()).color;
 
-    new ChessPiece(symbol, color, position);
+    chessPiece = new ChessPiece(symbol, color, position);
+    player = new Player(color);
 
-    if (chessPiece != null)
-        System.out.println("You want to move this piece: " + symbol);
-        System.out.println("You choose this color: " + color.name());
-        System.out.println("You are in this position: " + position.toString());
+    if(chessPiece.isValideMove(position, chessBoard.getBoardPieces(), player.isWhitePlayer())){
+        System.out.println("valid move");
+    }else{
+        System.out.println("Opps invalid move !");
+    }
+
 
 }
 

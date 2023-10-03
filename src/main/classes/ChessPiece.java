@@ -6,7 +6,7 @@ public class ChessPiece {
     public String symbol;
     public Square position;
     public Color color;
-    private static final int BOARD_SIZE = 8;
+    private static final char BOARD_SIZE = '8';
 
     public ChessPiece(){};
     public ChessPiece(String symbol, Color color, Square position) {
@@ -25,7 +25,10 @@ public class ChessPiece {
     }
 
     public boolean isValideMove(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer){
-        if ( position.getNewRow() < 0 || position.getNewRow() >= BOARD_SIZE || position.getNewColumn() < 0 || position.getNewColumn() >= BOARD_SIZE) {
+        char newRow = position.getNewRow();
+        char newCol = position.getNewColumn();
+
+        if ( newRow <= 0 || newRow > BOARD_SIZE || newCol < 'a' || newCol > 'h') {
             return false;
         }
         return true;

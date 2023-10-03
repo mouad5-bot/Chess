@@ -10,5 +10,6 @@ public class Main {
 
         ChessBoard chessBoard = new ChessBoard();
         chessBoard.play();
+        // ----------- change the conception uml to the new one ---------------
     }
 }

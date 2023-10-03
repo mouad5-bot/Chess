@@ -3,12 +3,14 @@ package main.classes;
 public class Player {
     private Color pieceColor;
 
-    public Color getPieceColor() {
-        return pieceColor;
+    public Player(){}
+
+    public Player(Color pieceColor) {
+        this.pieceColor = pieceColor;
     }
 
-    public void setPieceColor(Color pieceColor) {
-        this.pieceColor = pieceColor;
+    public Color getPieceColor() {
+        return pieceColor;
     }
 
     public boolean isWhitePlayer(){

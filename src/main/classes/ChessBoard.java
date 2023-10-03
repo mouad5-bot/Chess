@@ -8,7 +8,6 @@ public class ChessBoard {
     private static final int BOARD_SIZE = 8;
     private Map<String, ChessPiece> boardPieces;
 
-
     public ChessBoard() {
         boardPieces = new HashMap<>();
         initializeBoardUsingMap();
