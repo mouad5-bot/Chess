@@ -61,7 +61,6 @@ public class ChessBoard {
     }
 
     public void displayBoard() {
-        int rowPieceIndex = 8;
         for (int row = BOARD_SIZE; row > 0; row--) {
             System.out.print(row + "  ");
             char alpha = 'a';

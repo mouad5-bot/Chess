@@ -29,29 +29,35 @@ public class Move {
         this.player = player;
     }
 
-public void move(Square position) {
-    char row = position.getRow();
-    char col = position.getColumn();
-    char newRow = position.getNewRow();
-    char newCol = position.getNewColumn();
+    public void move(Square position) {
+        char row = position.getRow();
+        char col = position.getColumn();
+        char newRow = position.getNewRow();
+        char newCol = position.getNewColumn();
+    
+        ChessBoard chessBoard = new ChessBoard();
+        Player player;
+    
+        ChessPiece chessPiece = chessBoard.getBoardPieces().get(col +""+ row);
+        ChessPiece newChessPiece = chessBoard.getBoardPieces().get(newCol +""+ newRow);
+        ChessPiece tempChessPiece;
 
-    ChessBoard chessBoard = new ChessBoard();
-    Player player;
+        tempChessPiece = chessPiece;
+        chessPiece = newChessPiece;
+        newChessPiece = tempChessPiece;
 
-    ChessPiece chessPiece = chessBoard.getBoardPieces().get(col +""+ row);
-    ChessPiece newChessPiece = chessBoard.getBoardPieces().get(newCol +""+ newRow);
+        Color color = chessBoard.getBoardPieces().get(col + "" + row).color;
+        player = new Player(color);
+    
+        if (chessPiece.isValideMove(position, chessBoard.getBoardPieces(), player.isWhitePlayer())) {
+            System.out.println("valid move");
 
-    Color color = chessBoard.getBoardPieces().get(col + "" + row).color;
-    player = new Player(color);
-
-    if (chessPiece.isValideMove(position, chessBoard.getBoardPieces(), player.isWhitePlayer())) {
-        chessBoard.getBoardPieces(col +""+ row, chessPiece)
-        System.out.println("valid move");
-    } else {
-        System.out.println("Ops invalid move !");
+            chessBoard.getBoardPieces().put(col +""+ row, chessPiece);
+            chessBoard.getBoardPieces().put(newCol +""+ newRow, newChessPiece);
+        } else {
+            System.out.println("Ops.. invalid move! try again");
+        }
+    
     }
-
-
-}
 
 }

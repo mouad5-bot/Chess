@@ -7,10 +7,7 @@
     <list default="true" id="7732854f-8bd1-4f86-9d8b-b5f6552ed1fa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/classes/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/classes/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/ChessPiece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/classes/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Queen.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,6 +113,7 @@
       <workItem from="1696181684660" duration="8462000" />
       <workItem from="1696235000143" duration="15671000" />
       <workItem from="1696319062578" duration="14151000" />
+      <workItem from="1696406681914" duration="6352000" />
     </task>
     <servers />
   </component>
@@ -137,5 +135,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/classes/Move.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/classes/Move.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
