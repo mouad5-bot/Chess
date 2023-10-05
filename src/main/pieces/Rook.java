@@ -22,6 +22,12 @@ public class Rook extends ChessPiece {
     }
 
     @Override
+    public boolean isValideMove(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer) {
+        return false;
+        //return super.isValideMove(position, boardPieces, isWhitePlayer);
+    }
+
+    @Override
     public boolean isBeCaptured() {
         return super.isBeCaptured();
     }

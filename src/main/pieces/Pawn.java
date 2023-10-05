@@ -39,8 +39,8 @@ public class Pawn extends ChessPiece {
             return true;
         }
 
-        //return false;
-        return super.isValideMove(position, boardPieces, isWhitePlayer);
+         return false;
+        //return super.isValideMove(position, boardPieces, isWhitePlayer);
     }
 
     @Override

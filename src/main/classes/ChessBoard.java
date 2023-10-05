@@ -19,7 +19,6 @@ public class ChessBoard {
 
     private void initializeBoardUsingMap() {
 
-        //boardPieces.get("a8").isValideMove("a8", "a3", boardPieces);
         // Black pieces
         boardPieces.put("a8",(new Rook("r", Color.BLACK, new Square())));
         boardPieces.put("b8",(new Knight("n", Color.BLACK, new Square())));
@@ -39,7 +38,7 @@ public class ChessBoard {
         for (int row = 2; row < 6; row++) {
             alpha = 'a';
             for (int col = 0; col < BOARD_SIZE; col++) {
-                boardPieces.put(alpha++ + "" + index, (new EmptySquare("~", Color.NON, new Square())));
+                boardPieces.put(alpha++ + "" + index, (new EmptySquare("~", Color.NONE, new Square())));
             }
             index--;
         }
@@ -108,7 +107,7 @@ public class ChessBoard {
             System.out.println("this is old position : " + column + "" + row);
             System.out.println("this is the current position : " + newCol + "" + newRow);
             Move move = new Move();
-            move.move(position);
+            move.move(position, this);
         }
         scanner.close();
     }

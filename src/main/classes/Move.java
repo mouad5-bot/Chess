@@ -29,15 +29,14 @@ public class Move {
         this.player = player;
     }
 
-    public void move(Square position) {
+    public void move(Square position, ChessBoard chessBoard) {
         char row = position.getRow();
         char col = position.getColumn();
         char newRow = position.getNewRow();
         char newCol = position.getNewColumn();
-    
-        ChessBoard chessBoard = new ChessBoard();
+
         Player player;
-    
+
         ChessPiece chessPiece = chessBoard.getBoardPieces().get(col +""+ row);
         ChessPiece newChessPiece = chessBoard.getBoardPieces().get(newCol +""+ newRow);
         ChessPiece tempChessPiece;
@@ -49,7 +48,7 @@ public class Move {
         Color color = chessBoard.getBoardPieces().get(col + "" + row).color;
         player = new Player(color);
     
-        if (chessPiece.isValideMove(position, chessBoard.getBoardPieces(), player.isWhitePlayer())) {
+        if (newChessPiece.isValideMove(position, chessBoard.getBoardPieces(), player.isWhitePlayer())) {
             System.out.println("valid move");
 
             chessBoard.getBoardPieces().put(col +""+ row, chessPiece);

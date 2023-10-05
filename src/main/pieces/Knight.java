@@ -12,25 +12,27 @@ public class Knight extends ChessPiece {
             super(symbol,color, position);
         }
 
+    @Override
+    public boolean isValideMove(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer) {
 
-        public boolean isValideMove(int currentRow, int currentCol, int newRow, int newCol) {
-            // Check if the move is a valid knight move | abs calcul the absolut value of number
-            int rowDiff = Math.abs(newRow - currentRow);
-            int colDiff = Math.abs(newCol - currentCol);
+        // Calculate the row movement direction based on the player's color
+        char row = position.getRow();
+        char col = position.getColumn();
+        char newRow = position.getNewRow();
+        char newCol = position.getNewColumn();
 
-            return (rowDiff == 2 && colDiff == 1) || (rowDiff == 1 && colDiff == 2);
-        }
+        // Check if the move is a valid knight move | abs calcul the absolut value of number
+        int rowDiff = Math.abs(newRow - row);
+        int colDiff = Math.abs(newCol - col);
 
+        return (rowDiff == 2 && colDiff == 1) || (rowDiff == 1 && colDiff == 2);
 
-        public boolean moveValidation(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer) {
-            ChessPiece newPositionPiece = boardPieces.get(position.getColumn()+""+position.getRow());
-            if(newPositionPiece instanceof EmptySquare) ;
+        //return false;
+        //return super.isValideMove(position, boardPieces, isWhitePlayer);
+    }
 
-            return true;
-        }
-
-        @Override
-        public boolean isBeCaptured() {
+    @Override
+    public boolean isBeCaptured() {
             return super.isBeCaptured();
         }
     }

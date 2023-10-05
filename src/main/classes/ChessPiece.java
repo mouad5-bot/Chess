@@ -2,7 +2,7 @@ package main.classes;
 
 import java.util.Map;
 
-public class ChessPiece {
+public abstract class ChessPiece {
     public String symbol;
     public Square position;
     public Color color;

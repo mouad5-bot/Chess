@@ -20,6 +20,19 @@ public class Bishop extends ChessPiece {
             return true;
         }
 
+    public boolean isValideMove(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer) {
+
+        // Calculate the row movement direction based on the player's color
+        char row = position.getRow();
+        char col = position.getColumn();
+        char newRow = position.getNewRow();
+        char newCol = position.getNewColumn();
+
+
+        return false;
+        //return super.isValideMove(position, boardPieces, isWhitePlayer);
+    }
+
         @Override
         public boolean isBeCaptured() {
             return super.isBeCaptured();
