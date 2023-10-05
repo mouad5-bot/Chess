@@ -5,8 +5,12 @@ import main.pieces.*;
 import java.util.*;
 
 public class ChessBoard {
-    private static final int BOARD_SIZE = 8;
     private Map<String, ChessPiece> boardPieces;
+    private static final int BOARD_SIZE = 8;
+    public static final String RESET = "\u001B[0m";
+    public static final String BLACK = "\u001B[30m";
+    public static final String RED = "\u001B[31m";
+    public static final String WHITE = "\u001B[37m";
 
     public ChessBoard() {
         boardPieces = new HashMap<>();
@@ -84,7 +88,7 @@ public class ChessBoard {
 
             }
             if (input.length() != 2) {
-                System.out.println("Invalid input! Please enter the position of the piece to move.");
+                System.out.println(RED+"Invalid input!" + RESET + "Please enter the position of the piece to move.");
                 continue;
             }
 
@@ -92,7 +96,7 @@ public class ChessBoard {
             char row = input.charAt(1);
 
             if (column < 'a' || column > 'h' || row < '1' || row > '8') {
-                System.out.println("Invalid position! Please enter a valid position on the chessboard.");
+                System.out.println(RED +"Invalid position!" + RESET + "Please enter a valid position on the chessboard.");
                 continue;
             }
 

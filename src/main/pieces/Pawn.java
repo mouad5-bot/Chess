@@ -25,21 +25,24 @@ public class Pawn extends ChessPiece {
         int rowDirection = isWhitePlayer ? 1 : -1 ;
 
         // Check if the pawn is moving forward by one row
-        if (newRow == row + rowDirection && (newCol == ++col || newCol == --col)) {
-            return true;
-        }
+//        if (newRow == row + rowDirection && (newCol == ++col || newCol == --col)) {
+//            return true;
+//        }
 
         // Check if the pawn is making its initial two square move
-        if (newRow == row + (2 * rowDirection) && newCol == col && row == (isWhitePlayer ? 2 : 7)) {
-            return true;
+        if (!(newRow == row + (2 * rowDirection) && newCol == col && row == (isWhitePlayer ? '2' : '7'))) {
+            return false;
+        }
+        if ((isWhitePlayer && row > newRow) || (!isWhitePlayer && row < newRow)) {
+            return false;
         }
 
-        // Check if the pawn is capturing a piece diagonally
-        if (newRow == row + rowDirection && Math.abs(newCol - col) == 1) {
-            return true;
+         //Check if the pawn is capturing a piece diagonally
+        if (!(newRow == row + rowDirection && Math.abs(newCol - col) == 1)) {
+            return false;
         }
 
-         return false;
+         return true;
         //return super.isValideMove(position, boardPieces, isWhitePlayer);
     }
 

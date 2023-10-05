@@ -6,7 +6,6 @@ public abstract class ChessPiece {
     public String symbol;
     public Square position;
     public Color color;
-    private static final char BOARD_SIZE = '8';
 
     public ChessPiece(){};
     public ChessPiece(String symbol, Color color, Square position) {

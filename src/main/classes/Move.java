@@ -1,9 +1,18 @@
 package main.classes;
 
+import main.pieces.EmptySquare;
+
 public class Move {
     private Square position;
     private ChessPiece[][] piece;
     private Player player;
+
+    public static final String RESET = "\u001B[0m";
+    public static final String BLACK = "\u001B[30m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String RED = "\u001B[31m";
+    public static final String WHITE = "\u001B[37m";
+
 
     public Square getPosition() {
         return position;
@@ -41,20 +50,21 @@ public class Move {
         ChessPiece newChessPiece = chessBoard.getBoardPieces().get(newCol +""+ newRow);
         ChessPiece tempChessPiece;
 
-        tempChessPiece = chessPiece;
-        chessPiece = newChessPiece;
-        newChessPiece = tempChessPiece;
+//        tempChessPiece = chessPiece;
+//        chessPiece = newChessPiece;
+//        newChessPiece = tempChessPiece;
 
         Color color = chessBoard.getBoardPieces().get(col + "" + row).color;
         player = new Player(color);
     
-        if (newChessPiece.isValideMove(position, chessBoard.getBoardPieces(), player.isWhitePlayer())) {
-            System.out.println("valid move");
+        if (chessPiece.isValideMove(position, chessBoard.getBoardPieces(), player.isWhitePlayer())) {
+            System.out.println(GREEN + "valid move" + RESET);
 
-            chessBoard.getBoardPieces().put(col +""+ row, chessPiece);
-            chessBoard.getBoardPieces().put(newCol +""+ newRow, newChessPiece);
+            chessBoard.getBoardPieces().put(col +""+ row, newChessPiece);
+            chessBoard.getBoardPieces().put(newCol +""+ newRow, chessPiece);
+
         } else {
-            System.out.println("Ops.. invalid move! try again");
+            System.out.println(RED + "Ops.. invalid move! try again" + RESET);
         }
     
     }
