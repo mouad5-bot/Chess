@@ -15,40 +15,51 @@ public class Pawn extends ChessPiece {
 
     @Override
     public boolean isValideMove(Square position, Map<String, ChessPiece> boardPieces, boolean isWhitePlayer) {
-
-        // Calculate the row movement direction based on the player's color
+        // rows and columns
         char row = position.getRow();
         char col = position.getColumn();
         char newRow = position.getNewRow();
         char newCol = position.getNewColumn();
+        String emptySquare = "~";
 
+        //objects of pieces
+        ChessPiece piece = boardPieces.get(col +""+ row);
+        ChessPiece newPiece = boardPieces.get(newCol +""+ newRow);
+
+        // Calculate the row movement direction based on the player's color
         int rowDirection = isWhitePlayer ? 1 : -1 ;
 
-        // Check if the pawn is moving forward by one row
-//        if (newRow == row + rowDirection && (newCol == ++col || newCol == --col)) {
-//            return true;
-//        }
-
         // Check if the pawn is making its initial two square move
-        if (!(newRow == row + (2 * rowDirection) && newCol == col && row == (isWhitePlayer ? '2' : '7'))) {
+        if (newCol == col && row == (isWhitePlayer ? '2' : '7') && (newRow == row + (2 * rowDirection) || newRow == row + rowDirection)) {
+            return true;
+        }
+        //check that the player doesn't move the piece to back
+        if ((isWhitePlayer && row > newRow)) {
             return false;
         }
-        if ((isWhitePlayer && row > newRow) || (!isWhitePlayer && row < newRow)) {
+        if (!isWhitePlayer && row < newRow) {
             return false;
         }
 
-         //Check if the pawn is capturing a piece diagonally
-        if (!(newRow == row + rowDirection && Math.abs(newCol - col) == 1)) {
+        //check that pawn can go to just empty square in same col
+        if(newRow == row + rowDirection && col == newCol && newPiece.symbol == emptySquare){
+            return true;
+        }
+
+        //Check if the pawn is capturing a piece diagonally
+        if ((newRow == row + rowDirection && Math.abs(newCol - col) == 1 )) {
+            if (newPiece.symbol != emptySquare && newPiece.color != piece.color){
+                return true;
+            }
             return false;
         }
 
          return true;
-        //return super.isValideMove(position, boardPieces, isWhitePlayer);
     }
 
     @Override
     public boolean isBeCaptured() {
-        return super.isBeCaptured();
+        return true;
     }
 
 }

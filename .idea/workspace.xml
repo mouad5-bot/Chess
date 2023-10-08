@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7732854f-8bd1-4f86-9d8b-b5f6552ed1fa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/classes/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/classes/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/ChessPiece.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/classes/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/classes/Move.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/pieces/Pawn.java" afterDir="false" />
     </list>
@@ -119,7 +119,10 @@
       <workItem from="1696406681914" duration="14113000" />
       <workItem from="1696431920092" duration="1842000" />
       <workItem from="1696438188095" duration="1459000" />
-      <workItem from="1696455594496" duration="21306000" />
+      <workItem from="1696455594496" duration="22525000" />
+      <workItem from="1696578447832" duration="10015000" />
+      <workItem from="1696605339070" duration="661000" />
+      <workItem from="1696683937937" duration="17824000" />
     </task>
     <servers />
   </component>
@@ -147,23 +150,23 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/classes/Move.java</url>
-          <line>67</line>
+          <line>69</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/classes/Move.java</url>
-          <line>48</line>
+          <line>43</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/pieces/Pawn.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="11" />
+          <line>56</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/pieces/Pawn.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="12" />
+          <line>18</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

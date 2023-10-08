@@ -3,9 +3,12 @@ package main.classes;
 import main.pieces.*;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class ChessBoard {
     private Map<String, ChessPiece> boardPieces;
+    //public Stack<String> pieceCaptured = new Stack<>();
+    public ArrayList<String> pieceCaptured= new ArrayList<>();
     private static final int BOARD_SIZE = 8;
     public static final String RESET = "\u001B[0m";
     public static final String BLACK = "\u001B[30m";
@@ -73,9 +76,9 @@ public class ChessBoard {
             }
             System.out.println();
         }
+        System.out.print("");
         System.out.println("   a b c d e f g h");
     }
-
     public void play() {
         Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -103,15 +106,29 @@ public class ChessBoard {
             System.out.print("Enter the position of the square to move your piece (e.g., a4):");
             String currentInput = scanner.nextLine().trim();
 
+            if (currentInput.length() != 2) {
+                System.out.println(RED+"Invalid input!" + RESET + "Please enter a valid position to move your piece .");
+                continue;
+            }
+
             char newCol = Character.toLowerCase(currentInput.charAt(0));
             char newRow = currentInput.charAt(1);
 
             Square position = new Square(row, column, newRow, newCol);
 
-            System.out.println("this is old position : " + column + "" + row);
-            System.out.println("this is the current position : " + newCol + "" + newRow);
             Move move = new Move();
-            move.move(position, this);
+            move.move(position, this, pieceCaptured);
+            //System.out.println(move.stream().map(move -> move.pieceCaptured).collect(Collectors.toList()));
+
+            List<String> listOfPiecesCaptured = pieceCaptured.stream().collect(Collectors.toList());
+
+            System.out.print("Pieces Captured : ");
+            for (int i = 0; i < listOfPiecesCaptured.size(); i++) {
+                System.out.print(listOfPiecesCaptured.get(i) + ", ");
+            }
+            System.out.println();
+
+
         }
         scanner.close();
     }
